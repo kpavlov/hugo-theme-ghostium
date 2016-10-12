@@ -3,7 +3,7 @@ license = "MIT"
 licenselink = "http://sm.mit-license.org/"
 description = "Yet another port of oswaldoacauan's ghostium theme to Hugo"
 homepage = "https://github.com/kpavlov/hugo-theme-ghostium"
-tags = ["blog", "ghostium"]
+tags = ["blog", "ghostium", "highlightjs"]
 features = ["blog"]
 min_version = 0.14
 
