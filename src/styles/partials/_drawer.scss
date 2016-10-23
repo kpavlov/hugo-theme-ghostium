@@ -39,6 +39,8 @@
   background-color: $drawer-background-color;
   color: $background-color;
   transition: opacity .3s linear;
+  border-radius: 2px;
+  opacity: 0.9;
 
   &:hover,
   &:focus {
