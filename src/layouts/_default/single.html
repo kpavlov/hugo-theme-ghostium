@@ -21,14 +21,18 @@
                   {{ dateFormat "2006-01-02" .Date }}
                 </time>
               </li>
-              {{ partial "tags" . }}
               {{ partial "categories" . }}
+              {{ partial "tags" . }}
 
               {{ if ne .Params.comments "false" }}
               <li class="post-item-meta-item">
                 <a href="{{ .Permalink }}#disqus_thread" data-disqus-identifier='{{ dateFormat "20060102150405" .Date }}'>Comments</a>
               </li>
               {{ end }}
+              <li class="post-item-meta-item" title="Estimated reading time" itemprop="timeRequired">
+                  <meta itemprop="duration" content="T{{ .ReadingTime }}M" />
+                  ~{{ .ReadingTime }} min
+              </li>
             </ul>
             <h1 itemprop="name headline" class="post-title"><a href="{{ .Permalink }}" itemprop="url" data-pjax title="{{ .Title }}">{{ .Title }}</a></h1>
             <!-- A subtitle not available in Ghosts yet -->
