@@ -9,6 +9,7 @@
   "devDependencies": {
     "gulp": "^3.8.7",
     "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^2.0.13",
     "gulp-concat": "^2.6.0",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.6.0",
@@ -29,6 +30,7 @@
     "jquery": "^3.1.1",
     "node-font-awesome": "^1.0.2",
     "object-assign": "^4.1.0",
+    "prismjs": "^1.5.1",
     "shallow-copy": "0.0.1"
   }
 }

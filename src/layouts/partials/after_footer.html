@@ -1,18 +1,17 @@
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script>
-        window.jQuery || document.write('<script src="/assets/js/jquery-3.1.1.min.js">\x3C/script>');
+        window.jQuery || document.write('<script src="assets/js/jquery-3.1.1.min.js">\x3C/script>');
     </script>
 
     <!--<script src="/_components/jquery-pjax/jquery.pjax.js"></script>-->
 {{ if $.Site.Params.enable_pjax }}
    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.pjax/1.9.6/jquery.pjax.min.js" integrity="sha256-Xuf/Wtp4J0pHH1OolTHfRbWP2FkR6WaB69ut7w4FxpY=" crossorigin="anonymous"></script>
 {{ end }}
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js" integrity="sha256-s63qpgPYoQk+wv3U6WZqioVJrwFNBTgD4dkeegLuwvo=" crossorigin="anonymous"></script>
-    <script src="/assets/js/foot-scripts.min.js?v=20160713"></script>
+    <script src="/assets/js/prism.min.js?v={{ .Now.Unix }}"></script>
+    <script src="/assets/js/foot-scripts.min.js?v={{ .Now.Unix }}"></script>
 
     <script type="text/javascript">
-      hljs.initHighlightingOnLoad();
 
       {{ if .IsPage }}
         {{ if ne .Params.show_comment false }}
