@@ -40,13 +40,24 @@ module.exports = {
         dest: dest + '/static/img'
     },
 
-    files: [{
-        src: [src + '/archetypes/**'],
-        dest: dest + '/archetypes'
-    }, {
-        src: [src + '/images/**'],
-        dest: dest + '/images'
-    }],
+    files: [
+        {
+            src: [src + '/archetypes/**'],
+            dest: dest + '/archetypes'
+        },
+        {
+            src: [src + '/images/**'],
+            dest: dest + '/images'
+        },
+        {
+            src: ['README.md'],
+            dest: dest
+        },
+        {
+            src: ['theme.toml'],
+            dest: dest
+        }
+    ],
 
     assets: {
         src: ['src/assets/**'],

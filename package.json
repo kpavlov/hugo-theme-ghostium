@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Yet another port of oswaldoacauan's ghostium theme to Hugo ",
   "author": "Konstantin Pavlov",
+  "repository": "https://github.com/kpavlov/hugo-theme-ghostium",
   "license": "MIT",
   "private": false,
   "devDependencies": {
@@ -18,7 +19,8 @@
   },
   "scripts": {
     "clean": "gulp clean",
-    "start": "gulp"
+    "start": "gulp",
+    "build": "gulp build"
   },
   "dependencies": {
     "classnames": "^2.2.5",

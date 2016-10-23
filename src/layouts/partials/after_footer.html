@@ -1,11 +1,13 @@
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script>
-        window.jQuery || document.write('<script src="assets/js/jquery-3.1.1.min.js">\x3C/script>');
+        window.jQuery || document.write('<script src="/assets/js/jquery-3.1.1.min.js">\x3C/script>');
     </script>
 
     <!--<script src="/_components/jquery-pjax/jquery.pjax.js"></script>-->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.pjax/1.9.6/jquery.pjax.min.js" integrity="sha256-Xuf/Wtp4J0pHH1OolTHfRbWP2FkR6WaB69ut7w4FxpY=" crossorigin="anonymous"></script>
+{{ if $.Site.Params.enable_pjax }}
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.pjax/1.9.6/jquery.pjax.min.js" integrity="sha256-Xuf/Wtp4J0pHH1OolTHfRbWP2FkR6WaB69ut7w4FxpY=" crossorigin="anonymous"></script>
+{{ end }}
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js" integrity="sha256-s63qpgPYoQk+wv3U6WZqioVJrwFNBTgD4dkeegLuwvo=" crossorigin="anonymous"></script>
     <script src="/assets/js/foot-scripts.min.js?v=20160713"></script>
 
@@ -33,14 +35,14 @@
         {{ end }}
       {{ end }}
 
-      if(GHOSTIUM.haveGA) {
-        (function(g,h,o,s,t,z){g.GoogleAnalyticsObject=s;g[s]||(g[s]=
-        function(){(g[s].q=g[s].q||[]).push(arguments)});g[s].s=+new Date;
-        t=h.createElement(o);z=h.getElementsByTagName(o)[0];
-        t.src='//www.google-analytics.com/analytics.js';
-        z.parentNode.insertBefore(t,z)}(window,document,'script','ga'));
-        ga('create',ga_ua);ga('send','pageview');
-      }
+{{ if $.Site.Params.googleAnalytics }}
+      (function(g,h,o,s,t,z){g.GoogleAnalyticsObject=s;g[s]||(g[s]=
+              function(){(g[s].q=g[s].q||[]).push(arguments)});g[s].s=+new Date;
+          t=h.createElement(o);z=h.getElementsByTagName(o)[0];
+          t.src='//www.google-analytics.com/analytics.js';
+          z.parentNode.insertBefore(t,z)}(window,document,'script','ga'));
+      ga('create','{{ $.Site.Params.googleAnalytics }}');ga('send','pageview');
+{{ end }}
 
       if(GHOSTIUM.haveDisqus) {
         var disqus_developer = 1;

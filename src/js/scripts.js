@@ -24,7 +24,7 @@
         // =================
         Drawer.init();
 
-        // PrismJS handler
+        // highlight.js handler
         // =================
         var _hljsHandler = function () {
             $('pre code').each(function (i, block) {
@@ -197,7 +197,7 @@
 
         // Smooth scrolling for same page anchors
         // =================
-        $document.on('click', 'a[href^=#]:not([href=#])', function (e) {
+        $document.on('click', 'a[href^="#"]:not([href="#"])', function (e) {
             e.preventDefault();
 
             var target = $(this.hash);

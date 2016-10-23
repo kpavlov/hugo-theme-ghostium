@@ -1,4 +1,4 @@
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -12,6 +12,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="generator" content="Hugo {{ .Hugo.Version }}"/>
 
     {{ $description := .Description }}
     {{ if $description }} {{ $description := .Summary }} {{ end }}
@@ -50,16 +51,17 @@
 
       // Ghostium Globals
       // ==============
-      window.GHOSTIUM = {};
-      GHOSTIUM.haveGA = {{ if $.Site.Params.google_analytics_tracking_id }} true; {{ else }} false; {{ end }}
-      GHOSTIUM.haveDisqus = {{ if $.Site.Params.disqus_short_name }} true; {{ else }} false; {{ end }}
-      GHOSTIUM.enablePjax = {{ if $.Site.Params.enable_pjax }} true; {{ else }} false; {{ end }}
+      window.GHOSTIUM = {
+          haveGA: {{ if $.Site.Params.googleAnalytics }}true{{ else }}false{{ end }},
+          haveDisqus: {{ if $.Site.Params.disqus_short_name }}true{{ else }}false{{ end }},
+          enablePjax: {{ if $.Site.Params.enable_pjax }}true{{ else }}false{{ end }}
+      }
     </script>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js" integrity="sha256-ffw+9zwShMev88XNrDgS0hLIuJkDfXhgyLogod77mn8=" crossorigin="anonymous"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js" integrity="sha256-EPrkNjGEmCWyazb3A/Epj+W7Qm2pB9vnfXw+X6LImPM=" crossorigin="anonymous"></script>
-      <script type='text/javascript'>
-          window.Modernizr || document.write('<script src="assets/js/modernizr-2.8.3.min.js">\x3C/script>');
-          window.Pace || document.write('<script src="assets/js/pace-1.0.2.min.js">\x3C/script>');
-      </script>
-  </head>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js" integrity="sha256-EPrkNjGEmCWyazb3A/Epj+W7Qm2pB9vnfXw+X6LImPM=" crossorigin="anonymous"></script>
+    <script type='text/javascript'>
+        window.Modernizr || document.write('<script src="/assets/js/modernizr-2.8.3.min.js">\x3C/script>');
+        window.Pace || document.write('<script src="/assets/js/pace-1.0.2.min.js">\x3C/script>');
+    </script>
+</head>
