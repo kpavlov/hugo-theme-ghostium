@@ -86,6 +86,22 @@
               <a href="#" data-action="share-gplus"><i class="fa fa-fw fa-lg fa-google-plus"></i></a>
             </div>
           </footer>
+
+          <nav role="pagination" class="post-list-pagination">
+            {{ if .Prev }}
+            <a href="{{ .Prev.Permalink }}" class="post-list-pagination-item post-list-pagination-item-prev"
+               title="{{ .Prev.Title }}">
+              <i class="fa fa-angle-double-left"></i>&nbsp;{{ .Prev.Title }}
+            </a>
+            {{ end }}
+            {{ if .Next }}
+            <a href="{{ .Next.Permalink }}" class="post-list-pagination-item post-list-pagination-item-next"
+               title="{{ .Next.Title }}">
+              {{ .Next.Title }}&nbsp;<i class="fa fa-angle-double-right"></i>
+            </a>
+            {{ end }}
+          </nav>
+
         </section>
 
       <section itemprop="comment" class="post-comments">
