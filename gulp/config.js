@@ -34,7 +34,8 @@ module.exports = {
                     'node_modules/fastclick/lib/fastclick.js',
                     src + '/js/drawer.js',
                     src + '/js/imageLoader.js',
-                    src + '/js/scripts.js'
+                    src + '/js/scripts.js',
+                    src + '/js/cookie-policy.es6'
                 ]
             },
             {

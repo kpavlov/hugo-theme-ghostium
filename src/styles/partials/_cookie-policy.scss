@@ -1,0 +1,10 @@
+#cookiePolicyPopup {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  z-index: 9999;
+  background-color: $background-color;
+  opacity: 0.95;
+  text-align: center;
+}
