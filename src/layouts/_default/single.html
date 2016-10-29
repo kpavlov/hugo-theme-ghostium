@@ -90,13 +90,13 @@
           <nav role="pagination" class="post-list-pagination">
             {{ if .Prev }}
             <a href="{{ .Prev.Permalink }}" class="post-list-pagination-item post-list-pagination-item-prev"
-               title="{{ .Prev.Title }}">
+               title="{{ .Prev.Title }}" data-pjax>
               <i class="fa fa-angle-double-left"></i>&nbsp;{{ .Prev.Title }}
             </a>
             {{ end }}
             {{ if .Next }}
             <a href="{{ .Next.Permalink }}" class="post-list-pagination-item post-list-pagination-item-next"
-               title="{{ .Next.Title }}">
+               title="{{ .Next.Title }}" data-pjax>
               {{ .Next.Title }}&nbsp;<i class="fa fa-angle-double-right"></i>
             </a>
             {{ end }}
