@@ -8,7 +8,7 @@
 
         // Cache a couple of useful elements
         // =================
-        var $window = $(window),
+        const $window = $(window),
             $document = $(document),
             $html = $(document.documentElement),
             $body = $(document.body),
@@ -231,7 +231,7 @@
 
         // Fix DISQUS iframe does not resize on mobile orientation change
         // =================
-        $window.on('orientationchange', function (e) {
+        $window.on('orientationchange', function() {
             _disqusHandler();
         });
 
