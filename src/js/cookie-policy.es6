@@ -6,7 +6,7 @@
         return document.cookie.match('(^|;)\\s*' + a + '\\s*=\\s*([^;]+)') ? true : false;
     }
 
-    const COOKIE_NAME = 'cookie-accepted';
+    const COOKIE_NAME = 'cookies-ok';
 
     if (!hasCookie(COOKIE_NAME)) {
         //no cookie
