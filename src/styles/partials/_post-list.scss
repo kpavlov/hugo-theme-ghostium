@@ -1,4 +1,5 @@
-.post-list {}
+.post-list {
+}
 
 .post-item-header,
 .post-item-footer,
@@ -21,7 +22,8 @@
   }
 }
 
-.post-item-header {}
+.post-item-header {
+}
 
 .post-item-title {
   line-height: 1.1;
@@ -43,9 +45,13 @@
   p {
     margin: 0;
   }
+  a {
+    text-decoration: none;
+  }
 }
 
-.post-item-footer {}
+.post-item-footer {
+}
 
 .post-item-meta-list {
   margin: 0;
@@ -126,8 +132,12 @@
     }
   }
 
-  &.post-list-pagination-item-prev { float: left; }
-  &.post-list-pagination-item-next { float: right; }
+  &.post-list-pagination-item-prev {
+    float: left;
+  }
+  &.post-list-pagination-item-next {
+    float: right;
+  }
 }
 
 
