@@ -6,7 +6,7 @@
         return document.cookie.match('(^|;)\\s*' + a + '\\s*=\\s*([^;]+)') ? true : false;
     }
 
-    const COOKIE_NAME = 'cookies-ok';
+    const COOKIE_NAME = 'cookie';
 
     if (!hasCookie(COOKIE_NAME)) {
         //no cookie
@@ -14,7 +14,9 @@
         cookiePopup.show();
         $("#cookiePolicyAccept").click(function (e) {
             e.preventDefault();
-            document.cookie = COOKIE_NAME + "=1;path=/";
+            const now = new Date();
+            now.setFullYear(now.getFullYear() + 10);
+            document.cookie = COOKIE_NAME + "=ok;expires=" + now.toGMTString() +";path=/";
             cookiePopup.fadeOut();
         });
     }
