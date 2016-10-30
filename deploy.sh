@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-REPO=${GIT_DEPLOY_REPO:git@github.com:kpavlov/hugo-theme-ghostiumx.git}
+REPO=${GIT_DEPLOY_REPO:-git@github.com:kpavlov/hugo-theme-ghostiumx.git}
 
 rm -rf dist
 git clone --branch master --depth 25 ${REPO} dist
