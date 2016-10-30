@@ -8,3 +8,7 @@ Based on [https://github.com/cxfksword/ghostium](https://github.com/cxfksword/gh
 
     npm i
     npm run clean && npm start
+    
+## How to deploy
+
+    ./deploy.sh
