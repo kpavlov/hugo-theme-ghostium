@@ -1,0 +1,18 @@
+name = "GhostiumX"
+license = "MIT"
+licenselink = "http://sm.mit-license.org/"
+description = "Yet another port of oswaldoacauan's ghostium theme to Hugo"
+homepage = "https://github.com/kpavlov/hugo-theme-ghostiumx"
+tags = ["blog", "ghostium", "prism", "pjax"]
+features = ["blog"]
+min_version = 0.17
+
+[author]
+  name = "Konstantin Pavlov"
+  homepage = "https://github.com/kpavlov/hugo-theme-ghostiumx"
+
+# If porting an existing theme
+[original]
+  name = "oswaldoacauan"
+  homepage = "https://github.com/oswaldoacauan/ghostium"
+  repo = "https://github.com/oswaldoacauan/ghostium"
