@@ -18,7 +18,13 @@
                   {{ $len := len $arr }}
                   {{ $last := sub $len 2 }}
                   <header>
-                    <p><h2>Posts tagged with <i>{{ index $arr $last }}</i></h2></p>
+                    <p><h2>
+                    {{ if eq .Data.Singular "tag" }}
+                      Posts tagged with <i>#{{ index $arr $last }}</i>
+                    {{ else }}
+                      Posts in category <i>{{ .Title }}</i>
+                    {{ end }}
+                    </h2></p>
                     <hr>
                   </header>
 
