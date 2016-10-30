@@ -1,4 +1,4 @@
-# hugo-theme-ghostium
+# GhostiumX (hugo-theme-ghostiumx)
 Yet another port of oswaldoacauan's ghostium theme to Hugo
  
 ## How to build

@@ -1,9 +1,9 @@
 {
-  "name": "hugo-theme-ghostium",
+  "name": "hugo-theme-ghostiumx",
   "version": "0.1.0",
-  "description": "Yet another port of oswaldoacauan's ghostium theme to Hugo ",
+  "description": "GhostiumX - Yet another port of oswaldoacauan's ghostium theme to Hugo ",
   "author": "Konstantin Pavlov",
-  "repository": "https://github.com/kpavlov/hugo-theme-ghostium",
+  "repository": "https://github.com/kpavlov/hugo-theme-ghostiumx",
   "license": "MIT",
   "private": false,
   "devDependencies": {
