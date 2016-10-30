@@ -1,5 +1,8 @@
 # GhostiumX (hugo-theme-ghostiumx)
+
 Yet another port of oswaldoacauan's ghostium theme to Hugo
+
+Based on [https://github.com/cxfksword/ghostium](https://github.com/cxfksword/ghostium)
  
 ## How to build
 
