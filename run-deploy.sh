@@ -4,4 +4,4 @@ npm i
 npm run clean
 npm run build
 
-./deploy
+./deploy.sh
