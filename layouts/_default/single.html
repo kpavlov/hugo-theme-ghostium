@@ -40,14 +40,14 @@
           </header>
           <aside class="post-side">
             <div class="post-author">
-                <a href="{{if .Params.website}}{{.Params.website}}{{else}}{{$.Site.BaseURL}}{{end}}" class="post-author-avatar">
-                  <img src="{{if .Params.avatar}}{{.Params.avatar}}{{else}}{{$.Site.Author.avatar}}{{end}}" alt="{{if .Params.author}}{{.Params.author}}{{else}}{{$.Site.Author.name}}{{end}}">
+                <a href="{{ .Params.website | default $.Site.BaseURL }}" class="post-author-avatar">
+                  <img src="{{ .Params.avatar | default $.Site.Author.avatar }}" alt="{{ .Params.author | default $.Site.Author.name }}">
                 </a>
               <div class="post-author-info">
-                <a href="{{if .Params.website}}{{.Params.website}}{{else}}{{$.Site.BaseURL}}{{end}}" class="post-author-name">
-                  {{if .Params.author}}{{.Params.author}}{{else}}{{$.Site.Author.name}}{{end}}
+                <a href="{{ .Params.website | default $.Site.BaseURL }}" class="post-author-name">
+                  {{ .Params.author | default $.Site.Author.name }}
                 </a>
-                <p class="post-author-bio">{{ .Params.author_aio }}</p>
+                <p class="post-author-bio">{{ .Params.author_bio | default $.Site.Params.author_bio }}</p>
               </div>
             </div>
           </aside>
@@ -57,16 +57,16 @@
           <footer class="post-footer">
             <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
                 <a href="{{ $.Site.BaseURL }}" class="post-author-avatar">
-                  <img itemprop="image" src="{{if .Params.avatar}}{{.Params.avatar}}{{else}}{{$.Site.Author.avatar}}{{end}}" alt="{{if .Params.author}}{{.Params.author}}{{else}}{{$.Site.Author.name}}{{end}}">
+                  <img itemprop="image" src="{{ .Params.avatar | default $.Site.Author.avatar }}" alt="{{ .Params.author | default $.Site.Author.name }}">
                 </a>
               <div class="post-author-info">
                 <h4 class="post-footer-heading">Written By</h4>
-                <a href="{{if .Params.website}}{{.Params.website}}{{else}}{{$.Site.BaseURL}}{{end}}" itemprop="url" class="post-author-name">
-                  <span itemprop="name">{{if .Params.author}}{{.Params.author}}{{else}}{{$.Site.Author.name}}{{end}}</span>
+                <a href="{{ .Params.website | default $.Site.BaseURL }}" itemprop="url" class="post-author-name">
+                  <span itemprop="name">{{ .Params.author | default $.Site.Author.name }}</span>
                 </a>
-                <p itemprop="description" class="post-author-bio">{{ .Params.author_aio }}</p>
+                <p itemprop="description" class="post-author-bio">{{ .Params.author_bio | default $.Site.Params.author_bio }}</p>
                 {{ if .Params.location }}
-                  <p class="post-author-location">{{ .Params.location }}</p>
+                  <p class="post-author-location">{{ .Params.location | default $.Site.Params.location }}</p>
                 {{ end }}
                 {{ if .Params.website }}
                   <p class="post-author-website">
