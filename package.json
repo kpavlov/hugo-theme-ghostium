@@ -30,6 +30,7 @@
     "fastclick": "^1.0.6",
     "jquery": "^3.1.1",
     "node-font-awesome": "^1.0.2",
+    "font-awesome": "^4.7.0",
     "object-assign": "^4.1.0",
     "prismjs": "^1.5.1",
     "shallow-copy": "0.0.1"

@@ -1,5 +1,5 @@
 <li class="drawer-list-item">
-  <a href="{{ $.Site.BaseURL }}/" data-pjax>
+  <a href="{{ $.Site.BaseURL }}/" rel="start" data-pjax>
     <i class="fa fa-home"></i>Home
   </a>
 </li>
@@ -14,10 +14,17 @@
   </a>
 </li>
 <li class="drawer-list-item">
-  <a href="{{ $.Site.Params.subscribe_rss }}">
+  <a href="{{ $.Site.Params.subscribe_rss }}" target="_blank">
     <i class="fa fa-rss"></i>Subscribe to Feed
   </a>
 </li>
+
+{{ range .Site.Params.menu }}
+<li class="drawer-list-item">
+  <a href="{{ .url }}" data-pjax><i class="fa fa-{{ .fa_icon }}" aria-hidden="true"></i>{{ .name }}</a>
+</li>
+{{ end }}
+
 <li class="drawer-list-divider"></li>
 <li class="drawer-list-item drawer-list-title">
   Follow me

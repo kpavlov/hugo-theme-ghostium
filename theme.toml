@@ -4,7 +4,7 @@ licenselink = "http://sm.mit-license.org/"
 description = "Yet another port of oswaldoacauan's ghostium theme to Hugo"
 homepage = "https://github.com/kpavlov/hugo-theme-ghostiumx"
 tags = ["blog", "ghostium", "prism", "pjax"]
-features = ["blog"]
+features = ["blog", "themes", "disqus", "minimal", "responsive", "pjax", "prism"]
 min_version = 0.17
 
 [author]
