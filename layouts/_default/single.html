@@ -4,6 +4,9 @@
   <body class="">
     {{ partial "drawer" . }}
 
+    {{ $location := (.Params.location | default $.Site.Params.location) }}
+    {{ $author_bio := (.Params.author_bio | default $.Site.Params.author_bio) }}
+
     <div class="drawer-overlay"></div>
     <main id="container" role="main" class="container">
       <div class="surface">
@@ -47,7 +50,7 @@
                 <a href="{{ .Params.website | default $.Site.BaseURL }}" class="post-author-name">
                   {{ .Params.author | default $.Site.Author.name }}
                 </a>
-                <p class="post-author-bio">{{ .Params.author_bio | default $.Site.Params.author_bio }}</p>
+                <p class="post-author-bio">{{ $author_bio }}</p>
               </div>
             </div>
           </aside>
@@ -64,9 +67,9 @@
                 <a href="{{ .Params.website | default $.Site.BaseURL }}" itemprop="url" class="post-author-name">
                   <span itemprop="name">{{ .Params.author | default $.Site.Author.name }}</span>
                 </a>
-                <p itemprop="description" class="post-author-bio">{{ .Params.author_bio | default $.Site.Params.author_bio }}</p>
-                {{ if .Params.location }}
-                  <p class="post-author-location">{{ .Params.location | default $.Site.Params.location }}</p>
+                <p itemprop="description" class="post-author-bio">{{ $author_bio }}</p>
+                {{ if $location }}
+                  <p class="post-author-location" itemprop="homeLocation">{{ $location }}</p>
                 {{ end }}
                 {{ if .Params.website }}
                   <p class="post-author-website">
@@ -90,13 +93,13 @@
           <nav role="pagination" class="post-list-pagination">
             {{ if .Prev }}
             <a href="{{ .Prev.Permalink }}" class="post-list-pagination-item post-list-pagination-item-prev"
-               title="{{ .Prev.Title }}" data-pjax>
+               title="{{ .Prev.Title }}" data-pjax rel="prev">
               <i class="fa fa-angle-double-left"></i>&nbsp;{{ .Prev.Title }}
             </a>
             {{ end }}
             {{ if .Next }}
             <a href="{{ .Next.Permalink }}" class="post-list-pagination-item post-list-pagination-item-next"
-               title="{{ .Next.Title }}" data-pjax>
+               title="{{ .Next.Title }}" data-pjax rel="next">
               {{ .Next.Title }}&nbsp;<i class="fa fa-angle-double-right"></i>
             </a>
             {{ end }}
