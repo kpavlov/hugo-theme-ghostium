@@ -6,6 +6,7 @@
 
     {{ $location := (.Params.location | default $.Site.Params.location) }}
     {{ $author_bio := (.Params.author_bio | default $.Site.Params.author_bio) }}
+    {{ $author_name := .Params.author | default $.Site.Author.name }}
 
     <div class="drawer-overlay"></div>
     <main id="container" role="main" class="container">
@@ -44,7 +45,7 @@
           <aside class="post-side">
             <div class="post-author">
                 <a href="{{ .Params.website | default $.Site.BaseURL }}" class="post-author-avatar">
-                  <img src="{{ .Params.avatar | default $.Site.Author.avatar }}" alt="{{ .Params.author | default $.Site.Author.name }}">
+                  <img src="{{ .Params.avatar | default $.Site.Author.avatar }}" alt="{{ $author_name }}">
                 </a>
               <div class="post-author-info">
                 <a href="{{ .Params.website | default $.Site.BaseURL }}" class="post-author-name">
@@ -60,7 +61,7 @@
           <footer class="post-footer">
             <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
                 <a href="{{ $.Site.BaseURL }}" class="post-author-avatar">
-                  <img itemprop="image" src="{{ .Params.avatar | default $.Site.Author.avatar }}" alt="{{ .Params.author | default $.Site.Author.name }}">
+                  <img itemprop="image" src="{{ .Params.avatar | default $.Site.Author.avatar }}" alt="{{ $author_name }}">
                 </a>
               <div class="post-author-info">
                 <h4 class="post-footer-heading">Written By</h4>
@@ -106,10 +107,11 @@
           </nav>
 
         </section>
-
+      {{ if ne .Params.comments "false" }}
       <section itemprop="comment" class="post-comments">
         <div id="disqus_thread"></div>
       </section>
+      {{ end }}
     </article>
 
                 {{ partial "footer" . }}
