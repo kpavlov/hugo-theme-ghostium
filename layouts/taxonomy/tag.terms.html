@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ partial "header" . }}
+<body class="">
+{{ partial "drawer" . }}
+
+<div class="drawer-overlay"></div>
+<main id="container" role="main" class="container">
+    <div class="surface">
+        <div class="surface-container">
+            <div data-pjax-container class="content">
+
+                {{ partial "cover" . }}
+                <section class="wrapper" tabindex="0">
+                    <div class="wrapper-container">
+
+                        <header>
+                            <p>
+                            <h1>{{ .Title }}</h1>
+                            </p>
+                            <hr>
+                        </header>
+
+                        <section class="post-list">
+                            <ul>
+                                {{ $data := .Data }}
+                                {{ range $key, $value := .Data.Terms }}
+                                <li class="category-list-item">
+                                    <a href="/{{ $data.Plural }}/{{ $key | urlize }}">{{ $key }}</a>&nbsp;<sup>{{ $value.Count }}</sup>
+                                </li>
+                                {{ end }}
+                            </ul>
+                        </section>
+
+                        {{ partial "footer" . }}
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>
+
+{{ partial "after_footer" . }}
+</body>
+</html>

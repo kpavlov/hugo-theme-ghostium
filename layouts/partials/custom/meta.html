@@ -1,0 +1,14 @@
+{{ with $.Site.Params.twitter_user }}
+<!-- The Twitter username of the owner of this card's domain -->
+<meta name="twitter:site" content="@{{ . }}">
+<!-- The Twitter username of the author of this content -->
+<meta name="twitter:creator" content="{{ . }}">
+{{ end }}
+
+{{ with $.Site.Params.google_site_verification }}
+<!-- Change for Google Webmaster verification -->
+<meta name="google-site-verification" content="{{ . }}">
+{{ end }}
+
+<!-- Change for Facebook Insight verification -->
+<meta property="fb:admins" content="">

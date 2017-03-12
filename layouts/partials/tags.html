@@ -1,0 +1,10 @@
+{{ if .Params.tags }}
+<li class="post-item-meta-item">
+{{ $len := .Params.tags|len }}
+{{ range $idx, $tag := .Params.tags }}
+    {{ $i := add $idx 1 }}
+    <a itemprop="{{ if eq $i 1 }}articleSection{{ else }}keywords{{ end }}" href="/tags/{{ $tag | urlize }}/" data-pjax rel="tag">#{{ $tag }}</a>
+    {{ if lt $i $len }},{{ end }}
+{{ end }}
+</li>
+{{ end }}
