@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 {{ partial "header" . }}
-  <body class="">
-    {{ partial "drawer" . }}
+<body class="">
+{{ partial "drawer" . }}
 
-    {{ $location := (.Params.location | default $.Site.Params.location) }}
-    {{ $author_bio := (.Params.author_bio | default $.Site.Params.author_bio) }}
-    {{ $author_name := .Params.author | default $.Site.Author.name }}
+{{ $location := (.Params.location | default $.Site.Params.location) }}
+{{ $author_bio := (.Params.author_bio | default $.Site.Params.author_bio) }}
+{{ $author_name := .Params.author | default $.Site.Author.name }}
 
-    <div class="drawer-overlay"></div>
-    <main id="container" role="main" class="container">
-      <div class="surface">
+<div class="drawer-overlay"></div>
+<main id="container" role="main" class="container">
+    <div class="surface">
         <div class="surface-container">
-          <div data-pjax-container class="content">
+            <div data-pjax-container class="content">
 
-<section class="wrapper wrapper-post">
-  <div class="wrapper-container">
-    <article itemscope itemtype="http://schema.org/BlogPosting" role="article" class="post">
-        <section class="post-container">
-          <header class="post-header">
-            <ul class="post-meta-list">
-              {{ partial "categories" . }}
-              {{ partial "tags" . }}
-            </ul>
-            <h1 itemprop="name headline" class="post-title"><a href="{{ .Permalink }}" itemprop="url" data-pjax title="{{ .Title }}">{{ .Title }}</a></h1>
-            <!-- A subtitle not available in Ghosts yet -->
-            <!--h2 itemprop="about" class="post-subtitle"></h2-->
-          </header>
-          <div itemprop="articleBody" class="post-body">
-            {{ .Content }}
-          </div>
+                <section class="wrapper wrapper-post">
+                    <div class="wrapper-container">
+                        <article itemscope itemtype="http://schema.org/BlogPosting" role="article" class="post">
+                            <section class="post-container">
+                                <header class="post-header">
+                                    <ul class="post-meta-list">
+                                        {{ partial "categories" . }}
+                                        {{ partial "tags" . }}
+                                    </ul>
+                                    <h1 itemprop="name headline" class="post-title"><a href="{{ .Permalink }}" itemprop="url" data-pjax title="{{ .Title }}">{{ .Title }}</a></h1>
+                                    <!-- A subtitle not available in Ghosts yet -->
+                                    <!--h2 itemprop="about" class="post-subtitle"></h2-->
+                                </header>
+                                <div itemprop="articleBody" class="post-body">
+                                    {{ .Content }}
+                                </div>
 
-        </section>
+                            </section>
 
-    </article>
+                        </article>
 
-                {{ partial "footer" . }}
-              </div>
-            </section>
-          </div>
+                        {{ partial "footer" . }}
+                    </div>
+                </section>
+            </div>
         </div>
-      </div>
-    </main>
+    </div>
+</main>
 
 
-    {{ partial "after_footer" . }}
-  </body>
+{{ partial "after_footer" . }}
+</body>
 </html>
