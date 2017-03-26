@@ -11,7 +11,7 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-clean": "^0.3.2",
-    "gulp-clean-css": "^3.0.3",
+    "gulp-clean-css": "^3.0.4",
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.4.1",
