@@ -18,13 +18,10 @@
     {{ if $description }} {{ $description := .Summary }} {{ end }}
     <meta name="description" content="{{ $description }}">
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="{{ $title }}">
-    <meta name="twitter:description" content="{{ $description }}">
-
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="{{ $title }}">
-    <meta property="og:description" content="{{ $description }}">
+	{{ template "_internal/opengraph.html" . }}
+    {{ template "_internal/google_news.html" . }}
+    {{ template "_internal/schema.html" . }}
+    {{ template "_internal/twitter_cards.html" . }}
 
     {{ partial "custom/meta" . }}
 
