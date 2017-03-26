@@ -3,7 +3,7 @@
 {{ $len := .Params.categories|len }}
 {{ range $idx, $category := .Params.categories }}
     {{ $i := add $idx 1 }}
-    <a itemprop="{{ if eq $i 1 }}articleSection{{ else }}keywords{{ end }}" href="/categories/{{ $category | urlize }}/" data-pjax rel="category" >{{ i18n $category }}</a>
+    <a itemprop="{{ if eq $i 1 }}articleSection{{ else }}keywords{{ end }}" href="/categories/{{ $category | urlize }}/" data-pjax rel="category" >{{ i18n $category | default $category }}</a>
     {{ if lt $i $len }},{{ end }}
 {{ end }}
 </li>
