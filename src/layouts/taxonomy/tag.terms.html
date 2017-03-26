@@ -26,7 +26,7 @@
                                 {{ $data := .Data }}
                                 {{ range $key, $value := .Data.Terms }}
                                 <li class="category-list-item">
-                                    <a href="/{{ $data.Plural }}/{{ $key | urlize }}">{{ $key }}</a>&nbsp;<sup>{{ $value.Count }}</sup>
+                                    <a href="/{{ $data.Plural }}/{{ $key | urlize }}">{{ i18n $key }}</a>&nbsp;<sup>{{ $value.Count }}</sup>
                                 </li>
                                 {{ end }}
                             </ul>
