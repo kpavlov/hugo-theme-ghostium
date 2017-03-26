@@ -14,30 +14,28 @@
         <div class="surface-container">
           <div data-pjax-container class="content">
 
-<section class="wrapper wrapper-post">
-  <div class="wrapper-container">
-    <article itemscope itemtype="http://schema.org/BlogPosting" role="article" class="post">
-        <section class="post-container">
-          <header class="post-header">
-            <ul class="post-meta-list">
-              {{ partial "categories" . }}
-              {{ partial "tags" . }}
-            </ul>
-            <h1 itemprop="name headline" class="post-title"><a href="{{ .Permalink }}" itemprop="url" data-pjax title="{{ .Title }}">{{ .Title }}</a></h1>
-            <!-- A subtitle not available in Ghosts yet -->
-            <!--h2 itemprop="about" class="post-subtitle"></h2-->
-          </header>
-          <div itemprop="articleBody" class="post-body">
-            {{ .Content }}
-          </div>
-
-        </section>
-
-    </article>
-
+            <section class="wrapper wrapper-post">
+              <div class="wrapper-container">
+                <article itemscope itemtype="http://schema.org/BlogPosting" role="article" class="post">
+                    <section class="post-container">
+                      <header class="post-header">
+                        <ul class="post-meta-list">
+                          {{ partial "categories" . }}
+                          {{ partial "tags" . }}
+                        </ul>
+                        <h1 itemprop="name headline" class="post-title"><a href="{{ .Permalink }}" itemprop="url" data-pjax title="{{ .Title }}">{{ .Title }}</a></h1>
+                        <!-- A subtitle not available in Ghosts yet -->
+                        <!--h2 itemprop="about" class="post-subtitle"></h2-->
+                      </header>
+                      <div itemprop="articleBody" class="post-body">
+                        {{ .Content }}
+                      </div>
+                    </section>
+                </article>
                 {{ partial "footer" . }}
               </div>
             </section>
+
           </div>
         </div>
       </div>
