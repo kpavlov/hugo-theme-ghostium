@@ -59,6 +59,7 @@
                   {{ .Content }}
                 </div>
                 <footer class="post-footer">
+                  {{ if ne .Params.author "false" }}
                   <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
                     <a href="{{ $.Site.BaseURL }}" class="post-author-avatar">
                       <img itemprop="image" src="{{ .Params.avatar | default $.Site.Author.avatar }}" alt="{{ $author_name }}">
@@ -69,12 +70,12 @@
                         <span itemprop="name">{{ .Params.author | default $.Site.Author.name }}</span>
                       </a>
                       <p itemprop="description" class="post-author-bio">{{ $author_bio }}</p>
-                      {{ if $location }}
-                      <p class="post-author-location" itemprop="homeLocation">{{ $location }}</p>
+                      {{ with $location }}
+                      <p class="post-author-location" itemprop="homeLocation">{{ . }}</p>
                       {{ end }}
-                      {{ if .Params.website }}
+                      {{ with .Params.website }}
                       <p class="post-author-website">
-                        <a href="{{ .Params.website }}" rel="nofollow">{{ .Params.website }}</a>
+                        <a href="{{ .Params.website }}" rel="nofollow">{{ . }}</a>
                       </p>
                       {{ end }}
                       <p class="post-info">
@@ -83,6 +84,7 @@
                       </p>
                     </div>
                   </div>
+                  {{ end }}
                   <div class="post-social">
                     <h4 class="post-footer-heading">Spread the word</h4>
                     <a href="#" data-action="share-twitter"><i class="fa fa-fw fa-lg fa-twitter"></i></a>
