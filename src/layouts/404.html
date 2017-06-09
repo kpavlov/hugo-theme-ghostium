@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="{{ .Lang }}">
 {{ partial "header" . }}
-  <body class="">
-    {{ partial "drawer" . }}
+<body class="">
+{{ partial "drawer" . }}
 
-    {{ $location := (.Params.location | default $.Site.Params.location) }}
-    {{ $author_bio := (.Params.author_bio | default $.Site.Params.author_bio) }}
-    {{ $author_name := .Params.author | default $.Site.Author.name }}
+{{ $location := (.Params.location | default $.Site.Params.location) }}
+{{ $author_bio := (.Params.author_bio | default $.Site.Params.author_bio) }}
+{{ $author_name := .Params.author | default $.Site.Author.name }}
 
-    <div class="drawer-overlay"></div>
-    <main id="container" role="main" class="container">
-      <div class="surface">
+<div class="drawer-overlay"></div>
+<main id="container" role="main" class="container">
+    <div class="surface">
         <div class="surface-container">
-          <div class="content">
+            <div class="content">
+                <main class="wrapper">
+                    <div class="wrapper-container">
+                        <h1 class="post-title">404 Page Not Found</h1>
+                        <div class="post-body">
+                            <p><a href="{{ $.Site.BaseURL }}">Try something else</a></p>
+                        </div>
+                        {{ partial "footer" . }}
+                    </div>
 
-           <h1>404 Page Not Found</h1>
-
-          </div>
+                </main>
+            </div>
         </div>
-      </div>
-    </main>
+    </div>
+</main>
 
-    {{ partial "after_footer" . }}
-  </body>
+{{ partial "after_footer" . }}
+</body>
 </html>
