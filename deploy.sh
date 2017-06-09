@@ -5,10 +5,7 @@ REPO=${GIT_DEPLOY_REPO:-git@github.com:kpavlov/hugo-theme-ghostiumx.git}
 rm -rf dist
 git clone --branch master --depth 25 ${REPO} dist
 
-rm -rf dist/*
-npm i
-
-npm run build
+./build.sh
 
 commit_title=`git log -n 1 --format="%s" HEAD`
 

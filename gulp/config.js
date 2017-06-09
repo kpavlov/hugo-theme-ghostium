@@ -1,6 +1,5 @@
 var dest = './dist';
 var src = './src';
-var fontAwesome = require('node-font-awesome');
 
 module.exports = {
 
@@ -8,7 +7,7 @@ module.exports = {
         src: [src + '/styles/**/*.{sass,scss,css}'],
         dest: dest + '/static/assets/css',
         settings: {
-            includePaths: [fontAwesome.scssPath],
+            includePaths: ['node_modules/font-awesome/scss'],
             outputStyle: 'compressed',
             indentedSyntax: false, // Enable .sass syntax?
             imagePath: '/images' // Used by the image-url helper
@@ -100,11 +99,7 @@ module.exports = {
             dest: dest + '/images'
         },
         {
-            src: ['README.md'],
-            dest: dest
-        },
-        {
-            src: ['theme.toml'],
+            src: ['README.md', 'theme.toml'],
             dest: dest
         }
     ],
@@ -115,7 +110,7 @@ module.exports = {
     },
 
     fonts: {
-        src: [fontAwesome.fonts],
+        src: ['node_modules/font-awesome/fonts'],
         dest: dest + '/static/assets/fonts/'
     },
 
