@@ -6,7 +6,7 @@
     {{ if isset .Params "title" }}
     <title>{{ .Params.Title }} - {{ .Site.Title }}</title>
     {{ else }}
-    <title>{{ .Site.Title }}</title>
+    <title>{{- .Site.Title -}}</title>
     {{ end }}
 
     <meta name="HandheldFriendly" content="True">
@@ -18,7 +18,7 @@
 
     {{ $description := .Description }}
     {{ if $description }} {{ $description := .Summary }} {{ end }}
-    <meta name="description" content="{{ $description }}">
+    <meta name="description" content="{{- $description -}}">
 
 	{{ template "_internal/opengraph.html" . }}
     {{ template "_internal/google_news.html" . }}
@@ -57,10 +57,13 @@
         }
     </script>
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js" integrity="sha256-ffw+9zwShMev88XNrDgS0hLIuJkDfXhgyLogod77mn8=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js" integrity="sha256-EPrkNjGEmCWyazb3A/Epj+W7Qm2pB9vnfXw+X6LImPM=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"
+            integrity="sha256-ffw+9zwShMev88XNrDgS0hLIuJkDfXhgyLogod77mn8="
+            crossorigin="anonymous" defer></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"
+            integrity="sha256-EPrkNjGEmCWyazb3A/Epj+W7Qm2pB9vnfXw+X6LImPM=" crossorigin="anonymous" defer></script>
     <script type='text/javascript'>
-        window.Modernizr || document.write('<script src="/assets/js/modernizr-2.8.3.min.js">\x3C/script>');
-        window.Pace || document.write('<script src="/assets/js/pace-1.0.2.min.js">\x3C/script>');
+        window.Modernizr || document.write('<script src="/assets/js/modernizr-2.8.3.min.js" defer>\x3C/script>');
+        window.Pace || document.write('<script src="/assets/js/pace-1.0.2.min.js" defer>\x3C/script>');
     </script>
 </head>
