@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html lang="{{ .Lang }}">
 {{ partial "header" . }}
-<body class="">
-{{ partial "drawer" . }}
+<body>
 
-<div class="drawer-overlay"></div>
 <main id="container" role="main" class="container">
-  <div class="surface">
-    <div class="surface-container">
-      <div data-pjax-container class="content">
+    <div class="surface">
+        <div class="surface-container">
+            <div data-pjax-container class="content">
 
-        {{ partial "cover" . }}
+                {{ partial "cover" . }}
 
-        <section class="wrapper" tabindex="0">
-          <div class="wrapper-container">
-            {{ $arr := split .Permalink "/" }}
-            {{ $len := len $arr }}
-            {{ $last := sub $len 2 }}
-            <header>
-              <p><h2>
-              {{ if eq .Data.Singular "tag" }}
-              Posts tagged with <i>#{{ index $arr $last }}</i>
-              {{ else }}
-              Posts in category <i>{{ .Title }}</i>
-              {{ end }}
-            </h2></p>
-              <hr>
-            </header>
+                <section class="wrapper" tabindex="0">
+                    <div class="wrapper-container">
+                        {{ $arr := split .Permalink "/" }}
+                        {{ $len := len $arr }}
+                        {{ $last := sub $len 2 }}
+                        <header>
+                            <p>
+                            <h2>
+                                {{ if eq .Data.Singular "tag" }}
+                                Posts tagged with <i>#{{ index $arr $last }}</i>
+                                {{ else }}
+                                Posts in category <i>{{ .Title }}</i>
+                                {{ end }}
+                            </h2></p>
+                            <hr>
+                        </header>
 
-            <section class="post-list">
-              {{ range where .Data.Pages "Type" "post" }}
-              {{ .Render "summary" }}
-              {{ end }}
-            </section>
+                        <section class="post-list">
+                            {{ range where .Data.Pages "Type" "post" }}
+                            {{ .Render "summary" }}
+                            {{ end }}
+                        </section>
 
-            {{ partial "footer" . }}
-          </div>
-        </section>
-      </div>
+                        {{ partial "footer" . }}
+                    </div>
+                </section>
+            </div>
+        </div>
     </div>
-  </div>
 </main>
+
+{{ partial "drawer" . }}
+<div class="drawer-overlay"></div>
 
 {{ partial "after_footer" . }}
 </body>
